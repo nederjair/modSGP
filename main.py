@@ -6,7 +6,7 @@ from elite import stack_group_elite
 from genetic_algorithm import crossover_cycle, sum_based_prob
 from integration import Methods
 from model import TwoWheels
-from plots import plot_x0_vec_trajectories
+from plots import plot_others, plot_x0_vec_trajectories
 from score import group_score_calculation
 from small_variation import applySVMat, encodeSVMat
 
@@ -248,6 +248,25 @@ while True:
         current_generation += 1
 # ---------------------------------------------------------------------------------------#
 plot_x0_vec_trajectories(
+    elite_svs[0],
+    xCount,
+    qCount,
+    colCount,
+    x0_vec[:x0_index],
+    samples,
+    h,
+    robot.model,
+    Methods.euler,
+    elite_qs[0],
+    xf,
+    u_min,
+    u_max,
+    uCount,
+    min_delta,
+    svRowCount,
+    basic_solution,
+)
+plot_others(
     elite_svs[0],
     xCount,
     qCount,
