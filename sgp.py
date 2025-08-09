@@ -23,7 +23,7 @@ def decodeCol(b, f0):
 
 def decodeMatrix(mat, xi, xf, q, xCount, qCount, colCount, uMin, uMax):
     f0 = np.full(xCount + qCount + colCount, np.nan, dtype=float)
-    xq = np.concatenate((xi - xf, q), axis=0)
+    xq = np.concatenate((xf - xi, q), axis=0)
     f0[0 : qCount + xCount] = xq
     for k in range(colCount):
         f0[xCount + qCount + k] = decodeCol(mat[:, k], f0)
@@ -48,7 +48,7 @@ def symDecodeCol(b, f0):
 
 
 def symDecodeMatrix(mat, xCount, qCount, colCount):
-    x_ = ["(x" + str(i + 1) + "- xf" + str(i + 1) + ')' for i in range(xCount)]
+    x_ = ["(xf" + str(i + 1) + " - x" + str(i + 1) + ")" for i in range(xCount)]
     q = ["q" + str(i + 1) for i in range(qCount)]
     f0 = x_ + q
     for k in range(colCount):
