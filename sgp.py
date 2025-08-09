@@ -48,7 +48,7 @@ def symDecodeCol(b, f0):
 
 
 def symDecodeMatrix(mat, xCount, qCount, colCount):
-    x_ = ["x" + str(i + 1) + "- xf" + str(i + 1) for i in range(xCount)]
+    x_ = ["(x" + str(i + 1) + "- xf" + str(i + 1) + ')' for i in range(xCount)]
     q = ["q" + str(i + 1) for i in range(qCount)]
     f0 = x_ + q
     for k in range(colCount):

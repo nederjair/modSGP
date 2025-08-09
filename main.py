@@ -46,15 +46,15 @@ xf = np.array([0, 0, 0])
 # initial population creation
 # ----------------parse matrix basic solution parameters----------------------#
 
-b_space = 8  # amount of columns to encode de basic solution
-free_space = 15  # amount of columns to change the basic solution
+b_space = 5  # amount of columns to encode de basic solution
+free_space = 10  # amount of columns to change the basic solution
 colCount = b_space + free_space
 rowCount = 6
 
 # ----------------------------------------------------------------#
 # -------initial population creation (small variation+basic_solution)-------- #
 # population parameters
-max_gens = 1000
+max_gens = 10
 stop_score = 1.5
 pop_size = 2**5
 svRowCount = 10
